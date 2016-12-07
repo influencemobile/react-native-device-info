@@ -2,25 +2,25 @@
 // https://gist.github.com/miguelcma/e8f291e54b025815ca46
 // Modified as the original version crashes.
 
-#import "DeviceUID.h"
+#import "RNDeviceUID.h"
 
 @import UIKit;
 
-@interface DeviceUID ()
+@interface RNDeviceUID ()
 
 @property(nonatomic, strong, readonly) NSString *uidKey;
 @property(nonatomic, strong, readonly) NSString *uid;
 
 @end
 
-@implementation DeviceUID
+@implementation RNDeviceUID
 
 @synthesize uid = _uid;
 
 #pragma mark - Public methods
 
 + (NSString *)uid {
-    return [[[DeviceUID alloc] initWithKey:@"deviceUID"] uid];
+    return [[[RNDeviceUID alloc] initWithKey:@"deviceUID"] uid];
 }
 
 #pragma mark - Instance methods
@@ -54,11 +54,11 @@
 /*! Persist UID to NSUserDefaults and Keychain, if not yet saved
  */
 - (void)save {
-  if (![DeviceUID valueForUserDefaultsKey:_uidKey]) {
-    [DeviceUID setValue:_uid forUserDefaultsKey:_uidKey];
+  if (![RNDeviceUID valueForUserDefaultsKey:_uidKey]) {
+    [RNDeviceUID setValue:_uid forUserDefaultsKey:_uidKey];
   }
-  if (![DeviceUID valueForKeychainKey:_uidKey service:_uidKey]) {
-    [DeviceUID setValue:_uid forKeychainKey:_uidKey inService:_uidKey];
+  if (![RNDeviceUID valueForKeychainKey:_uidKey service:_uidKey]) {
+    [RNDeviceUID setValue:_uid forKeychainKey:_uidKey inService:_uidKey];
   }
 }
 

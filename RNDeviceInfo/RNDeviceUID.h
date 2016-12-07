@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@interface DeviceUID : NSObject
+@interface RNDeviceUID : NSObject
 + (NSString *)uid;
 @end

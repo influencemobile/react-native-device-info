@@ -7,7 +7,7 @@
 //
 
 #import "RNDeviceInfo.h"
-#import "DeviceUID.h"
+#import "RNDeviceUID.h"
 
 @interface RNDeviceInfo()
 
